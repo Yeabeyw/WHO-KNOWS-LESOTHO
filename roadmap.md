@@ -1,0 +1,3 @@
+- [x] Build the Lesotho quiz landing, timed questions, results, and replay.
+- [x] Connect sharing and Facebook page actions to the supplied page.
+- [x] Verify the game on desktop and mobile.
