@@ -7,6 +7,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { getResults } from "./-api.game-results";
+import { DIFFICULTY_LABELS } from "@/lib/game";
 
 const ADMIN_PASSWORD = "admin123"; // Change this in production!
 
@@ -114,7 +115,7 @@ function AdminDashboard() {
                 <CardContent>
                   <div className="flex items-center gap-2">
                     <BarChart3 className="text-primary" size={20} />
-                    <span className="text-3xl font-bold">{stats?.averageScore || 0}/10</span>
+                    <span className="text-3xl font-bold">{stats?.averageScore || 0}</span>
                   </div>
                 </CardContent>
               </Card>
@@ -156,6 +157,7 @@ function AdminDashboard() {
                       <TableHeader>
                         <TableRow>
                           <TableHead>Date</TableHead>
+                          <TableHead>Difficulty</TableHead>
                           <TableHead>Score</TableHead>
                           <TableHead>Performance</TableHead>
                           <TableHead>Followed Page</TableHead>
@@ -170,6 +172,9 @@ function AdminDashboard() {
                                 <Clock size={14} className="text-muted-foreground" />
                                 {new Date(result.timestamp).toLocaleString()}
                               </div>
+                            </TableCell>
+                            <TableCell>
+                              <Badge variant="outline">{DIFFICULTY_LABELS[result.difficulty as keyof typeof DIFFICULTY_LABELS] || "Unknown"}</Badge>
                             </TableCell>
                             <TableCell>
                               <span className="font-bold text-lg">{result.score}/10</span>

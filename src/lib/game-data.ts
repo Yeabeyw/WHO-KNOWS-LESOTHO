@@ -4,6 +4,7 @@ export interface GameResult {
   timestamp: string;
   userAgent: string | undefined;
   followedPage: boolean | undefined;
+  difficulty: number;
 }
 
 // In-memory storage (use a real database in production)
