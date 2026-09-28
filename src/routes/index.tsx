@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { FACEBOOK_PAGE_URL, GAME_NAME, GAME_URL, QUESTIONS, getResultMessage } from "@/lib/game";
 import { saveResult } from "./-api.game-results";
 import mountains from "@/assets/lesotho-mountains.jpg";
-import brand from "@/assets/tvision-forge-logo.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
@@ -173,7 +172,7 @@ function Index() {
         <p className="mt-8 font-display text-lg font-bold">Share your score and challenge someone!</p>
         <div className="mx-auto mt-5 flex max-w-xl flex-col gap-3 sm:flex-row"><Button onClick={shareNative} className="h-12 flex-1 rounded-md text-sm font-extrabold"><Share2 size={18} /> SHARE MY SCORE</Button><Button onClick={() => setShowShare(value => !value)} variant="outline" className="h-12 flex-1 rounded-md border-primary text-sm font-extrabold text-primary"><Zap size={18} /> CHALLENGE A FRIEND</Button></div>
         {showShare && <div className="mx-auto mt-3 grid max-w-xl grid-cols-3 gap-2" aria-label="Share options"><Button variant="outline" onClick={shareWhatsApp} className="h-11 rounded-md px-2 text-xs font-bold">WhatsApp</Button><Button variant="outline" onClick={shareFacebook} className="h-11 rounded-md px-2 text-xs font-bold"><Facebook size={16} /> Facebook</Button><Button variant="outline" onClick={copyLink} className="h-11 rounded-md px-2 text-xs font-bold">{copied ? <Check size={16} /> : <Copy size={16} />}{copied ? "Copied" : "Copy"}</Button></div>}
-        <div className="mt-10 border-t border-border pt-8"><img src={brand.url} alt="Tvision Forge" loading="lazy" width={1600} height={1073} className="mx-auto mb-4 h-20 w-auto mix-blend-multiply dark:mix-blend-normal" /><p className="font-display text-lg font-black">❤️ ENJOYED THE GAME?</p><p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">Visit our Facebook page and follow us for more challenges, games and content!</p><Button asChild className="mt-5 h-auto min-h-12 max-w-full whitespace-normal rounded-md px-6 py-3 text-center text-sm font-extrabold"><a href={FACEBOOK_PAGE_URL} target="_blank" rel="noopener noreferrer"><Heart size={17} /> VISIT & FOLLOW OUR FACEBOOK PAGE <ExternalLink size={15} /></a></Button></div>
+        <div className="mt-10 border-t border-border pt-8"><p className="font-display text-2xl font-black text-primary mb-4">Tvision Forge</p><p className="font-display text-lg font-black">❤️ ENJOYED THE GAME?</p><p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">Visit our Facebook page and follow us for more challenges, games and content!</p><Button asChild className="mt-5 h-auto min-h-12 max-w-full whitespace-normal rounded-md px-6 py-3 text-center text-sm font-extrabold"><a href={FACEBOOK_PAGE_URL} target="_blank" rel="noopener noreferrer"><Heart size={17} /> VISIT & FOLLOW OUR FACEBOOK PAGE <ExternalLink size={15} /></a></Button></div>
         <Button variant="ghost" onClick={() => setPhase("welcome")} className="mt-7 h-11 font-bold"><RotateCcw size={17} /> PLAY AGAIN</Button>
       </div></section>}
 
